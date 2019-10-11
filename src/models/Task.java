@@ -1,30 +1,34 @@
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Task {
-	private int id;
+	private int id = 0;
+	private static int counter = 1;
 	private String title;
-	private Date dueDate;
+	private LocalDate dueDate;
 	private  boolean statusCompleted;
-	private Project project;
-//	private String projectTitle;
+	private String project;
+
 	
-	public Task() {
-		
-	}
+//	public Task() {
+//		
+//	}
 	
 	
 	
-	public Task(int id,String title,Date dueDate,Project project) {
-		this.id = id;
+	public Task(String title,LocalDate dueDate,String project) {
+		this.id = counter++;
 		this.title = title;
 		this.dueDate = dueDate;
 		this.project = project;
+		this.statusCompleted = false;
 	}
 
 	public int getId() {
+//		id = counter++;
 		return id;
 	}
 
@@ -32,11 +36,11 @@ public class Task {
 		return title;
 	}
 
-	public Date getDueDate() {
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
 
-	public Project getProject() {
+	public String getProject() {
 		return project;
 	}
 
@@ -48,18 +52,29 @@ public class Task {
 		this.title = title;
 	}
 
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 
-//	public void setprojectTitle(String title) {
-//		this.projectTitle = title;
-//	}
-	public boolean isStatusCompleted() {
-		return statusCompleted;
+
+	public String isStatusCompleted() {
+		String taskCompleted;
+		
+		if(statusCompleted ) {
+			taskCompleted = "completed";
+			
+		}
+		else {
+			taskCompleted = "Not done";
+		}
+		
+		
+		
+		
+		return taskCompleted;
 	}
 
-	public void setProject(Project project) {
+	public void setProject(String project) {
 		this.project = project;
 	}
 
@@ -70,7 +85,8 @@ public class Task {
 	}
 
 	public String toString() {
-		return this.getId() + " " + this.getTitle() + " " + this.getDueDate() + " " + this.getProject();
+		return this.getId() + " " + this.getTitle() + " " + this.getDueDate() + " " + this.getProject() 
+		+ "\n";
 	}
 
 }

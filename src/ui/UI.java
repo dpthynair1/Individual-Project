@@ -8,19 +8,17 @@ public class UI {
 
 	public void printHeader() {
 
-		System.out.println("TaskId   Title           DueDate                    Project");
+		System.out.println("Task ID  Tasks                 Due Date     Project     Status");
+		System.out.println("**************************************************************");
 	}
 
-//	public void toString(Task tasks) {
-//		
-//		System.out.println(tasks.getId()\tä+ tasks.getTitle()+ tasks.getDueDate()+tasks.getProject());
-//	}
+
 
 	public void printTask(Task tasks) {
 		String idString = String.valueOf(tasks.getId());
 		String dueDate = String.valueOf(tasks.getDueDate());
-		System.out.println(fixLength(idString,9)  + fixLength(tasks.getTitle(),15) + fixLength(dueDate,25)
-				+"   " + fixLength(tasks.getProject().getProjectTitle(),10));
+		System.out.println(fixLength(idString,7)  + "  " +fixLength(tasks.getTitle(),20) +"  " + fixLength(dueDate,11)
+				+"  " + fixLength(tasks.getProject(),10)+"  "+fixLength(tasks.isStatusCompleted(), 12) );
 	}
 	
 	private String fixLength(String start, int length){
@@ -43,8 +41,5 @@ public class UI {
 		}
 	}
 
-//	public String fixLength(int start, int length) {
-//		String startString = String.valueOf(start);
-//		return fixLength(startString, length);
-//	}
+
 }
