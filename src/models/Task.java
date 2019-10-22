@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,26 +10,26 @@ public class Task {
 	private static int counter = 1;
 	private String title;
 	private LocalDate dueDate;
-	private  boolean statusCompleted;
+	private String statusCompleted;
 	private String project;
+	
 
-	
-//	public Task() {
-//		
-//	}
-	
-	
-	
-	public Task(String title,LocalDate dueDate,String project) {
+	public Task() {
+
+	}
+
+	public Task(String title, LocalDate dueDate, String project, String statusCompleted) {
 		this.id = counter++;
 		this.title = title;
 		this.dueDate = dueDate;
 		this.project = project;
-		this.statusCompleted = false;
+		this.statusCompleted = statusCompleted;
+
 	}
 
+//	Property method
+
 	public int getId() {
-//		id = counter++;
 		return id;
 	}
 
@@ -56,39 +57,24 @@ public class Task {
 		this.dueDate = dueDate;
 	}
 
+	public String getStatusCompleted() {
 
-	public String isStatusCompleted() {
-		String taskCompleted;
-		
-		if(statusCompleted ) {
-			taskCompleted = "completed";
-			
-		}
-		else {
-			taskCompleted = "Not done";
-		}
-		
-		
-		
-		
-		return taskCompleted;
+		return statusCompleted;
 	}
 
 	public void setProject(String project) {
 		this.project = project;
 	}
 
+	public void setStatusCompleted(String statusCompleted) {
 
-
-	public void setStatusCompleted(boolean statusCompleted) {
 		this.statusCompleted = statusCompleted;
 	}
-
+	
+//	To string 
+    @Override
 	public String toString() {
-		return this.getId() + " " + this.getTitle() + " " + this.getDueDate() + " " + this.getProject() 
-		+ "\n";
+		return id + "\t" + title + "\t" + dueDate + "\t" + project + "\t" + getStatusCompleted() + "\t" + "\n";
 	}
 
 }
-
-

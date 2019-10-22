@@ -18,7 +18,7 @@ public class UI {
 		String idString = String.valueOf(tasks.getId());
 		String dueDate = String.valueOf(tasks.getDueDate());
 		System.out.println(fixLength(idString,7)  + "  " +fixLength(tasks.getTitle(),20) +"  " + fixLength(dueDate,11)
-				+"  " + fixLength(tasks.getProject(),10)+"  "+fixLength(tasks.isStatusCompleted(), 12) );
+				+"  " + fixLength(tasks.getProject(),10)+"  "+fixLength(tasks.getStatusCompleted(), 12) );
 	}
 	
 	private String fixLength(String start, int length){
