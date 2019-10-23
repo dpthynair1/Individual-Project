@@ -63,6 +63,7 @@ public class Main {
 					String title = scan.next();
 					TL.removeTask(title);
 				}
+				TL.printTasks();
 				break;
 			case 4:
 				break;
