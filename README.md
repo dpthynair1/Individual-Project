@@ -6,7 +6,7 @@ TODO application enables the  user to :
 - Save tasks to a text file and retrieve the same.
 
 ## Class Diagram
-Class diagram can be found int he assets folder
+Class diagram can be found in the assets folder
 
 ### User manual
 
