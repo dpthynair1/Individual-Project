@@ -113,7 +113,17 @@ public class TaskList {
 	public boolean readFromFile() throws FileNotFoundException, IOException {
 
 		int lineNo = 0;
+		
+		File file = new File("TaskFile.txt");
+	       if (!file.exists()) {
+	           file.createNewFile();
+	       }
+		
+		
+		
 		try (BufferedReader br = new BufferedReader(new FileReader("TaskFile.txt"))) {
+			
+			
 
 			String line;
 			while ((line = br.readLine()) != null) {
@@ -150,7 +160,7 @@ public class TaskList {
 	}
 
 	public void removeTask(String title){
-		printTasks();
+		
 		Task tmpTask = findTask(title);
 
 		allTasks.remove(tmpTask);
@@ -293,4 +303,73 @@ public class TaskList {
 
 	}
 
+// Main program
+	public void programRun() throws FileNotFoundException, IOException {
+		String ans = null;
+		int option;
+		
+		
+		readFromFile();
+		welcome();
+		
+		do {
+
+			option();
+
+			System.out.println("Enter your option");
+			option = scan.nextInt();
+
+			switch (option) {
+			case 1:
+				System.out.println("Do you want to sort list by project or date ?");
+				String sort = scan.next();
+				if (sort != null && sort.equalsIgnoreCase("project")) {
+					sortByProject();
+				} else {
+					sortByDate();
+				}
+				break;
+
+			case 2:
+
+				do {
+					readFromFile();
+
+					createTask();
+
+					System.out.println("Enter another task ?(Y/N)");
+					ans = scan.next();
+
+				} while (ans.equalsIgnoreCase("y"));
+
+				break;
+			case 3:
+				System.out.println("Do you want to update, mark as done, remove");
+				String action = scan.next();
+				action.trim();
+				printTasks();
+				if (action.equalsIgnoreCase("update")) {
+					updateTask();
+				} else {
+					System.out.println("Enter the task title");
+					String title = scan.next();
+					removeTask(title);
+				}
+				printTasks();
+				break;
+			case 4:
+				break;
+
+			default:
+				System.out.println("Invalid option!");
+				break;
+
+			}
+
+		} while (option != 4);
+
+		writeToFile();
+	}
+	
+	
 }

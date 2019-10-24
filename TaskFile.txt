@@ -1,9 +1,3 @@
 Task ID	Tasks	Due Date	Project	Status
 -------------------------------------------------------
-1	t1	2019-12-12	study	NOT DONE	
-2	t1	2019-12-12	study	NOT DONE	
-3	t1	2019-12-12	study	NOT DONE	
-4	t1	2019-12-12	study	NOT DONE	
-5	t1	2019-12-12	study	NOT DONE	
-6	t1	2019-12-12	study	NOT DONE	
-7	t3	2019-11-20	p4	Completed	
+1	t1	2019-11-20	Study	NOT DONE	
