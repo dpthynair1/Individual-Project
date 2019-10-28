@@ -42,32 +42,10 @@ class TaskListTest {
 		list.createTask();
 
 
-//		System.out.println("Enter your task ");
-//		title = scan.next();
-//
-//		for(Task task: allTasks) {
-//			if(task.getTitle().equalsIgnoreCase(title)) {
-//				System.out.println("Task already exists");
-//			    title = scan.next();
-//			}
-//			
-//				
-//			}
-//
-//		System.out.println("Enter a completion date:");
-//		String date = scan.next();
-//		LocalDate localDate = LocalDate.parse(date);
-//
-//		System.out.println("Enter your project");
-//		String projectTitle = scan.next();
-//
-//		Task task = new Task(title, localDate, projectTitle, status);
-//
-//		list.getTask().add(task);
-//	
+
 
 		assertTrue(initialSize == list.getTask().size() - 1);
-//		assertEquals(status.equalsIgnoreCase("Not done"), list.getTask);
+
 	}
 
 	@Test
@@ -79,7 +57,7 @@ class TaskListTest {
 		int initialSize = list.getTask().size();
 		for(int i= 0;i< list.getTask().size(); i++){
 			if(list.getTask().get(i).getTitle().equals("t2")) {
-//				 Task tmpTask = list.getTask().get(i);
+
 				 list.removeTask("t2");
 			}else {
 				System.out.println("not removed");
