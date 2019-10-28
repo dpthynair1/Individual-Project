@@ -40,19 +40,12 @@ class TaskListTest {
 
 		int initialSize = list.getTask().size();
 		list.createTask();
-
-
-
-
 		assertTrue(initialSize == list.getTask().size() - 1);
 
 	}
 
 	@Test
 	void testRemoveTask() {
-
-		
-	
 		System.out.println(list.getTask().size());
 		int initialSize = list.getTask().size();
 		for(int i= 0;i< list.getTask().size(); i++){
@@ -63,9 +56,6 @@ class TaskListTest {
 				System.out.println("not removed");
 			}
 		}
-
-		
-		
 
 		assertTrue(initialSize == list.getTask().size()+1);
 	}
