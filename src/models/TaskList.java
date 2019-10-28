@@ -46,6 +46,8 @@ public class TaskList {
 		getTask().add(task);
 	}
 
+//	Method: Create task 
+
 	public void createTask() throws IOException {
 
 		String status = "NOT DONE";
@@ -54,12 +56,7 @@ public class TaskList {
 		System.out.println("Enter your task ");
 		title = scan.next();
 		
-			
-			
-
-			
-	
-		for(Task task: allTasks) {
+			for(Task task: allTasks) {
 			if(task.getTitle().equalsIgnoreCase(title)) {
 				System.out.println("Task already exists");
 			    title = scan.next();
@@ -68,10 +65,7 @@ public class TaskList {
 				
 			}
 			
-		
-
-
-		System.out.println("Enter a completion date:");
+		System.out.println("Enter a completion date (yyyy-mm-dd) :");
 		String date = scan.next();
 		LocalDate localDate = LocalDate.parse(date);
 
@@ -79,17 +73,10 @@ public class TaskList {
 		String projectTitle = scan.next();
 
 		Task task = new Task(title, localDate, projectTitle, status);
-		
-		
-		
-			
 		allTasks.add(task);
-		
-		
-
-		
-
-	}
+		}
+	
+//  Method: Write to  text file
 
 	public void writeToFile() throws IOException {
 
@@ -109,6 +96,8 @@ public class TaskList {
 		}
 
 	}
+	
+//	Method: Read from text file
 
 	public boolean readFromFile() throws FileNotFoundException, IOException {
 
@@ -143,6 +132,7 @@ public class TaskList {
 		return false;
 
 	}
+//Method: Find task 
 
 	public Task findTask(String title){
 
@@ -158,7 +148,9 @@ public class TaskList {
 		return null;
 
 	}
-
+	
+	
+//      Method: Remove task
 	public void removeTask(String title){
 		
 		Task tmpTask = findTask(title);
